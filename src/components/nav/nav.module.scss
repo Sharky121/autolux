@@ -1,0 +1,36 @@
+@use '../../styles/abstract' as var;
+
+.mainNav {
+    display: none;
+}
+
+.mainNavList {
+    @extend %list-reset;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+.mainNavLink {
+    color: var.$brand-black;
+    font-weight: 700;
+
+    &:hover,
+    &:active {
+        color: var.$brand-primary;
+    }
+
+    &:focus {
+        color: var.$brand-primary;
+    }
+}
+
+@include var.desktop-size {
+
+    .mainNav {
+        display: block;
+        margin-left: auto;
+    }
+}

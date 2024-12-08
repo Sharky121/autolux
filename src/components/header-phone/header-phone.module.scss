@@ -1,0 +1,79 @@
+@use '../../styles/abstract' as var;
+
+.headerPhoneWrapper {
+    position: relative;
+    
+    align-self: flex-end;
+}
+
+.headerPhoneButton {
+    display: none;
+}
+
+.headerPhoneCall {
+    position: relative;
+
+    color: var.$brand-primary;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: lowercase;
+    line-height: 1;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        left: 50%;
+        top: -19px;
+        
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+
+        background-image: url("/phone.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        transform: rotate(135deg);
+    }
+}
+
+.headerPhoneNumber {
+    display: none;
+}
+
+@include var.tablet-size {
+
+    .headerPhoneWrapper {
+        text-align: right;
+    }
+
+    .headerPhoneCall {
+        display: none;
+    }
+
+    .headerPhoneNumber {
+        display: block;
+
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .headerPhoneButton {
+        display: inline;
+
+        font-weight: 700;
+        color: var.$brand-danger;
+        text-decoration: underline;
+
+        &:hover,
+        &:active {
+            color: var.$brand-primary;
+        }
+    
+        &:focus {
+            color: var.$brand-primary;
+        }
+    }
+}

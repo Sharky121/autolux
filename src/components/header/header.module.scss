@@ -1,0 +1,49 @@
+@use '../../styles/abstract' as var;
+
+.header {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.headerLogo {
+    display: inline-block;
+    line-height: 1;
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+@include var.tablet-size {
+
+    .headerContainer {
+        justify-content: flex-start;
+        gap: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .headerLogo img {
+        width: 216px;
+        height: auto;
+    }
+
+    .headerPhone {
+        margin-left: auto;
+    }
+}
+
+@include var.desktop-size {
+
+    .headerLogo img {
+        width: 270px;
+    }
+}

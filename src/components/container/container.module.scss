@@ -1,0 +1,23 @@
+@use '../../styles/abstract' as var;
+
+.container {
+    max-width: var.$mobile-width;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@include var.tablet-size {
+
+    .container {
+        max-width: var.$tablet-width;
+    }
+}
+
+@include var.desktop-size {
+
+    .container {
+        max-width: var.$large-desktop-width;
+    }
+}

@@ -1,0 +1,41 @@
+@use '../../styles/abstract' as var;
+
+.hamburgerMenu {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    width: 30px;
+    height: 28px;
+
+    color: var.$brand-primary;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: lowercase;
+    line-height: 1;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 6px;
+        left: 50%;
+
+        display: block;
+        height: 3px;
+        width: 24px;
+        margin-left: -12px;
+
+        background-color: var.$brand-primary;
+
+        box-shadow: 0 6px 0 0 var.$brand-primary,
+                    0 -6px 0 0 var.$brand-primary;
+    }
+}
+
+@include var.desktop-size {
+    
+    .hamburgerMenu {
+        display: none;
+    }
+}

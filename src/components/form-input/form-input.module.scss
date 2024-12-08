@@ -1,0 +1,32 @@
+@use '../../styles/abstract' as var;
+
+.input {
+    width: 100%;
+    padding: 15px;
+
+    font-size: 14px;
+    color: var.$brand-black;
+
+    border: 2px solid rgba(var.$brand-primary, 0.5);
+    border-radius: 10px;
+    box-shadow: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    &::placeholder {
+        font-size: 14px;
+        color: var.$brand-black;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var.$brand-primary;
+    }
+
+    &:focus-visible {
+        outline: none;
+        border-color: var.$brand-primary;
+    }
+}

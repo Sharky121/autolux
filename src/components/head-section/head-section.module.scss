@@ -1,0 +1,152 @@
+@use '../../styles/abstract' as var;
+
+.headSectionContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    line-height: 1.4;
+}
+
+.headSectionTitle {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.headSectionSubtitle {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.headSectionContent {
+    margin-top: 30px;   
+}
+
+.headSectionImage {
+    border-radius: 10px;
+}
+
+.headSectionDesc {
+    margin-top: 30px;
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: 40px;
+
+        font-size: 20px;
+    }
+
+    p {
+        margin-bottom: 40px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    dl div {
+        margin-bottom: 10px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include var.tablet-size {
+
+    .headSectionContainer {
+        position: relative;
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            right: 15px;
+            top: 0;
+
+            display: block;
+            width: 347px;
+            height: 244px;
+
+            // background-image: url('/truck.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    .headSectionContainer.transportation::after {
+        background-image: url('/transportation.png');
+    }
+
+    .headSectionHeader {
+        width: 50%;
+    }
+
+    .headSectionTitle {
+        font-size: 48px;
+    }
+
+    .headSectionImage {
+        width: 930px;
+        height: 465px;
+    }
+
+    .headSectionDesc {
+
+        h4 {
+            margin-bottom: 50px;
+
+            font-size: 28px;
+        }
+
+        dl div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px; 
+        }
+
+        dl dt {
+            width: 330px;
+        }
+    }
+}
+
+@include var.desktop-size {
+
+    .headSectionContainer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 70px;
+
+        &::after {
+            left: -15px;
+            bottom: 40px;
+            top: auto;
+
+            width: 585px;
+            height: 412px;
+        }
+    }
+
+    .headSectionHeader {
+        width: 40%;
+    }
+ 
+    .headSectionContent {
+        width: 60%;
+        margin-top: 0;
+    }
+
+    .headSectionImage {
+        width: 100%;
+        height: auto;
+    }
+}

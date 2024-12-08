@@ -1,0 +1,13 @@
+@use '../../styles/abstract' as var;
+
+.button {
+    font-size: 14px;
+
+
+}
+
+.button--primary {
+    color: var.$brand-white;
+
+    background-color: var.$brand-primary;
+}

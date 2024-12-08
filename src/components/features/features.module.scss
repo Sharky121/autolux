@@ -1,0 +1,148 @@
+@use '../../styles/abstract' as var;
+
+.features {
+    background-color: var.$brand-grey-third;
+}
+
+.featuresContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    text-align: center
+}
+
+.featuresTitle {
+    margin: 0;
+
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.featuresSubtitle {
+    margin-top: 35px;
+    margin-bottom: 0;
+
+    color: var.$brand-primary;
+    font-weight: 700;
+}
+
+.featuresList {
+    @extend %list-reset;
+
+    margin-top: 70px;
+}
+
+.featuresItem {
+    position: relative;
+
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-top: 160px;
+
+    z-index: 1;
+
+    h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    p {
+        margin-top: 20px;
+        margin-bottom: 0;
+
+        font-size: 12px;
+    }
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 27px;
+        right: 50%;
+
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin-right: -70px;
+
+        border: 1px dashed rgba(var.$brand-brown-second, .3);
+        border-radius: 50%;
+
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        right: 50%;
+
+        display: block;
+        width: 160px;
+        height: 160px;
+        margin-right: -70px;
+
+        background-image: var(--bg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+
+        z-index: 2;
+    }
+}
+
+@include var.tablet-size {
+
+    .featuresContainer {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    
+
+    .featuresTitle {
+        font-size: 28px
+    }
+
+    .featuresList {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 90px 60px;
+        margin-top: 90px;
+    }
+
+    .featuresItem {
+        width: calc(50% - 60px);
+        padding-top: 230px;
+
+        &::after {
+            width: 220px;
+            height: 220px;
+            margin-right: -110px;
+
+            background-size: 220px;
+        }
+
+        &::before {
+            top: 35px;
+
+            width: 150px;
+            height: 150px;
+            margin-right: -75px;
+        }
+    }
+}
+
+@include var.desktop-size {
+
+    .featuresList {
+        gap: 100px 150px;
+        margin-top: 105px;
+    }
+
+    .featuresItem {
+        width: calc((100% - 150px * 2) / 3);
+    }
+}

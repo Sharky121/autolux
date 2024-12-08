@@ -1,0 +1,5 @@
+@use './abstract' as var;
+
+.text-primary {
+    color: var.$brand-primary;
+}
