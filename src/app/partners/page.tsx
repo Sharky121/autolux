@@ -1,5 +1,6 @@
 import HeadSection from "@/components/head-section/head-section";
-import styles from "./partner.module.scss";
+import AdvantagesSection from "@/components/advantages-section/advantages-section";
+import { partnersAdvantagesData } from "@/data/partners-advantages-data";
 
 async function getData() {
   const response = await fetch(`${process.env.HOST}/api/page-data`);
@@ -17,6 +18,9 @@ export default async function Page() {
   const page = pages.find((item: { slug: string; }) => item.slug === 'partners');
 
   return (
-    <HeadSection type="partners" data={page}/>
+    <>
+      <HeadSection type="partners" data={page}/>
+      <AdvantagesSection title="Преимущества работы с нами" type="partners" data={partnersAdvantagesData}/>
+    </>
   );
 }

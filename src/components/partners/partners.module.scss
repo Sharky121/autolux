@@ -40,6 +40,8 @@
 
 .partnersCarouselSlide {
     width: calc(100% / 3);
+
+    text-align: center;
 }
 
 @include var.tablet-size {

@@ -1,10 +1,62 @@
 @use '../../styles/abstract' as var;
 
 .headSectionContainer {
+    position: relative;
+
     padding-top: 40px;
     padding-bottom: 40px;
 
     line-height: 1.4;
+
+    &::after {
+        content: "";
+
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        display: block;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        z-index: -1;
+    }
+}
+
+.headSectionContainerAbout::after {
+    width: 143px;
+    height: 100px;
+
+    background-image: url('/truck.png');
+}
+
+.headSectionContainerTransportation::after {
+    width: 100px;
+    height: 100px;
+
+    background-image: url('/transportation.png');
+}
+
+.headSectionContainerDrivers::after {
+    width: 100px;
+    height: 100px;
+
+    background-image: url('/car.png');
+}
+
+.headSectionContainerPartners::after {
+    width: 100px;
+    height: 100px;
+
+    background-image: url('/handshake.png');
+}
+
+.headSectionContainerContacts::after {
+    width: 100px;
+    height: 100px;
+
+    background-image: url('/location.png');
 }
 
 .headSectionTitle {
@@ -39,6 +91,7 @@
         margin-bottom: 40px;
 
         font-size: 20px;
+        line-height: 1.1;
     }
 
     p {
@@ -60,35 +113,38 @@
 
 @include var.tablet-size {
 
-    .headSectionContainer {
-        position: relative;
-
-        &::after {
-            content: "";
-
-            position: absolute;
-            right: 15px;
-            top: 0;
-
-            display: block;
-            width: 347px;
-            height: 244px;
-
-            // background-image: url('/truck.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+    .headSectionContainerAbout::after {
+        width: 347px;
+        height: 244px;
+    }
+    
+    .headSectionContainerTransportation::after {
+        width: 233px;
+        height: 233px;
     }
 
-    .headSectionContainer.transportation::after {
-        background-image: url('/transportation.png');
+    .headSectionContainerDrivers::after {
+        width: 192px;
+        height: 192px;
     }
 
+    .headSectionContainerPartners::after {
+        width: 192px;
+        height: 192px;
+    }
+
+    .headSectionContainerContacts::after {
+        width: 155px;
+        height: 155px;
+    }
+    
     .headSectionHeader {
         width: 50%;
     }
 
     .headSectionTitle {
+        margin-bottom: 15px;
+
         font-size: 48px;
     }
 
@@ -98,6 +154,7 @@
     }
 
     .headSectionDesc {
+        margin-top: 60px;
 
         h4 {
             margin-bottom: 50px;
@@ -130,10 +187,32 @@
             left: -15px;
             bottom: 40px;
             top: auto;
-
-            width: 585px;
-            height: 412px;
         }
+    }
+
+    .headSectionContainerAbout::after {
+        width: 585px;
+        height: 412px;
+    }
+
+    .headSectionContainerTransportation::after {
+        width: 422px;
+        height: 422px;
+    }
+
+    .headSectionContainerDrivers::after {
+        width: 439px;
+        height: 439px;
+    }
+
+    .headSectionContainerPartners::after {
+        width: 493px;
+        height: 493px;
+    }
+
+    .headSectionContainerContacts::after {
+        width: 439px;
+        height: 439px;
     }
 
     .headSectionHeader {

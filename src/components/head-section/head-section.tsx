@@ -18,10 +18,18 @@ type HeadSectionType = {
 }
 
 const HeadSection = ({data, type}: HeadSectionType) => {
+
+    const typeToClass = {
+        'transportation': styles.headSectionContainerTransportation,
+        'about': styles.headSectionContainerAbout,
+        'drivers': styles.headSectionContainerDrivers,
+        'partners': styles.headSectionContainerPartners,
+        'contacts': styles.headSectionContainerContacts 
+    }
  
     return (
         <section className={styles.headSection}>
-            <Container customClassName={`${styles.headSectionContainer}`}>
+            <Container customClassName={`${styles.headSectionContainer} ${typeToClass[type]}`}>
                 <div className={styles.headSectionHeader}>
                     <h1 className={styles.headSectionTitle}>{data.title}</h1>
                     <p className={styles.headSectionSubtitle}>{data.subtitle}</p>

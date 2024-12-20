@@ -1,13 +1,42 @@
 @use '../../styles/abstract' as var;
 
 .button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    padding: 0 107px;
+
     font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
 
-
+    border: 2px solid transparent;
+    border-radius: 10px;
 }
 
-.button--primary {
+.buttonPrimary {
     color: var.$brand-white;
 
     background-color: var.$brand-primary;
+
+    &:hover {
+        color: var.$brand-primary;
+
+        background-color: var.$brand-white;
+
+        border: 2px solid var.$brand-primary;
+    }
+}
+
+.buttonFlex {
+    width: 100%;
+}
+
+@include var.tablet-size {
+
+
+    .buttonFlex {
+        width: auto;
+    }
 }

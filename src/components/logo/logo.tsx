@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import styles from './logo.module.scss';
+import Link from 'next/link';
 
 const Logo = () => {
     return (
-        <a href="/">
+        <Link href="/">
             <Image src="logo.png" width={169} height={32} alt="Логотип автолюкс"/>
-        </a>
+        </Link>
     )
 }
 

@@ -1,5 +1,7 @@
+import { driversAdvantagesData } from "@/data/drivers-advantages";
+
 import HeadSection from "@/components/head-section/head-section";
-import styles from "./driver.module.scss";
+import AdvantagesSection from "@/components/advantages-section/advantages-section";
 
 async function getData() {
   const response = await fetch(`${process.env.HOST}/api/page-data`);
@@ -17,6 +19,9 @@ export default async function Page() {
   const page = pages.find((item: { slug: string; }) => item.slug === 'driver');
 
   return (
-    <HeadSection type="driver" data={page}/>
+    <>
+      <HeadSection type="drivers" data={page}/>
+      <AdvantagesSection title="Преимущества работы в нашей компании" type="drivers" data={driversAdvantagesData}/>
+    </>
   );
 }
