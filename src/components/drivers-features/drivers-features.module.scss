@@ -1,0 +1,104 @@
+@use '../../styles/abstract' as var;
+
+.driverFeatures {
+    background-color: var.$brand-grey-third;
+}
+
+.driverFeaturesContainer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.driverFeaturesTitle {
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+
+    br {
+        display: none
+    }
+}
+
+.driverFeaturesList {
+    @extend %list-reset;
+}
+
+.driverFeaturesItem {
+    position: relative;
+
+    margin-bottom: 20px;
+    padding-left: 15px;
+
+    &::before {
+        content: "";
+        
+        position: absolute;
+        left: 0;
+        top: 6px;
+
+        display: block;
+        width: 4px;
+        height: 4px;
+
+        border-radius: 50%;
+        background-color: var.$brand-primary;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.driverFeaturesFeedback {
+    margin-top: 40px;
+}
+
+@include var.tablet-size {
+
+    .driverFeaturesTitle {
+        font-size: 28px;
+
+        br {
+            display: inline;
+        }
+    }
+}
+
+@include var.desktop-size {
+
+    .driverFeaturesContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .driverFeaturesFeedback {
+        max-width: 480px;
+        order: 2;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 40px;
+    }
+
+    .driverFeaturesList {
+        order: 3;
+        width: calc(100% - 520px);
+    }
+
+    .driverFeaturesTitle {
+        width: 100%;
+        order: 1;
+        margin-bottom: 75px;
+
+        br {
+            display: none;
+        }
+    }
+
+    .driverFeaturesItem {
+        margin-bottom: 23px;
+    }
+}

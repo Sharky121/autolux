@@ -1,0 +1,81 @@
+@use '../../styles/abstract' as var;
+
+.welcome {
+    width: 100%;
+    
+    background-image: url('/welcome.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top -100px center;
+}
+
+.welcomeContainer {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+}
+
+.welcomeFeedback {
+    padding-top: 220px;
+    padding-bottom: 20px;
+
+    background-image: linear-gradient(transparent 0% 48%, var.$brand-black 48% 100%);
+}
+
+.welcomeForm {
+    padding: 0 15px;
+}
+
+.welcomeTitle {
+    position: relative;
+
+    margin-bottom: 40px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var.$brand-white;
+    text-align: center;
+
+    z-index: 2;
+}
+
+.welcomeSubTitle {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    text-align: center;
+    color: var.$brand-white;
+}
+
+.welcomeFormList {
+    @extend %list-reset;
+}
+
+.welcomeFormItem {
+    margin-bottom: 65px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.welcomeFormButton {
+    margin-top: 20px;
+}
+
+@include var.tablet-size {
+
+    .welcome {
+        height: 620px;
+    }
+}
+
+@include var.desktop-size {
+
+    .welcome {
+        height: 780px;
+    }
+}

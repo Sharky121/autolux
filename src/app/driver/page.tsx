@@ -2,6 +2,7 @@ import { driversAdvantagesData } from "@/data/drivers-advantages";
 
 import HeadSection from "@/components/head-section/head-section";
 import AdvantagesSection from "@/components/advantages-section/advantages-section";
+import DriverFeatures from "@/components/drivers-features/drivers-features";
 
 async function getData() {
   const response = await fetch(`${process.env.HOST}/api/page-data`);
@@ -22,6 +23,7 @@ export default async function Page() {
     <>
       <HeadSection type="drivers" data={page}/>
       <AdvantagesSection title="Преимущества работы в нашей компании" type="drivers" data={driversAdvantagesData}/>
+      <DriverFeatures />
     </>
   );
 }

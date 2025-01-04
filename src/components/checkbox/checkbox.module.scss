@@ -1,0 +1,75 @@
+@use '../../styles/abstract' as var;
+
+.checkbox {
+    max-width: 195px;
+
+    line-height: 1;
+}
+
+.checkboxLabel {
+    position: relative;
+
+    display: inline-block;
+    padding-left: 35px;
+
+    font-size: 12px;
+    text-align: left;
+    line-height: inherit;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        left: 6px;
+        top: 50%;
+
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin-top: -10px;
+
+        border: 2px solid var.$brand-primary;
+        border-radius: 4px;
+    };
+}
+
+.checkboxInput {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+  
+    white-space: nowrap;
+  
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    appearance: none;
+}
+
+.checkboxLabelChecked::before {
+    background-color: var.$brand-primary;
+}
+
+.checkboxLabelChecked::after {
+    content: '';
+
+    position: absolute;
+    left: 13px;
+    top: 4px;
+
+    display: block;
+    width: 5px;
+    height: 10px;
+
+    rotate: 45deg;
+
+    border: 2px solid var.$brand-white;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}

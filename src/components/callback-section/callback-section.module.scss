@@ -1,0 +1,23 @@
+@use '../../styles/abstract' as var;
+
+.callbackSection {
+    background-image: linear-gradient(var.$brand-white 10%, var.$brand-grey-third 10% 100%);
+}
+
+.callbackSectionContainer {
+    padding-bottom: 40px;
+}
+
+@include var.tablet-size {
+
+    .callbackSectionContainer {
+        padding-bottom: 80px;
+    }
+}
+
+@include var.desktop-size {
+
+    .callbackSectionContainer {
+        padding-bottom: 120px;
+    }
+}

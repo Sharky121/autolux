@@ -38,6 +38,9 @@ export default function RootLayout({
         {/* SVG-ICONS */}
         <div style={{ display: "none" }}>
           <svg preserveAspectRatio="xMinYMid">
+            <symbol id="ico-cross" viewBox="0 0 24 24">
+              <path fill="currentColor" d="m12 13.05-5.075 5.075q-.2.2-.512.212-.313.013-.538-.212-.225-.225-.225-.525 0-.3.225-.525L10.95 12 5.875 6.925q-.2-.2-.212-.513-.013-.312.212-.537.225-.225.525-.225.3 0 .525.225L12 10.95l5.075-5.075q.2-.2.513-.213.312-.012.537.213.225.225.225.525 0 .3-.225.525L13.05 12l5.075 5.075q.2.2.212.512.013.313-.212.538-.225.225-.525.225-.3 0-.525-.225Z"></path>
+            </symbol>
             <symbol id="ico-container-storage" viewBox="0 0 24 24">
               <path fill="currentColor" d="m24,5v-2H0v2h1v14H0v2h24v-2h-1V5h1Zm-16,12h-2V7h2v10Zm5,0h-2V7h2v10Zm5,0h-2V7h2v10Z"/>
             </symbol>

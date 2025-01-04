@@ -1,0 +1,118 @@
+@use '../../styles/abstract' as var;
+
+.question {
+    max-width: 355px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 10px 20px 10px;
+
+    background-color: var.$brand-white;
+    box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+}
+
+.questionTitle {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.questionTitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.questionSubtitle {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+.questionForm {
+    text-align: center;
+}
+
+.questionFormList {
+    @extend %list-reset;
+}
+
+.questionFormItem {
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.questionCheckbox {
+    margin: 25px auto 0;
+}
+
+.questionFormButton {
+    margin-top: 25px;
+}
+
+@include var.tablet-size {
+
+    .question {
+        max-width: 780px;
+        padding: 70px 90px 60px;
+    }
+
+    .questionTitle {
+        max-width: 670px;
+        margin: 0 auto 20px;
+
+        font-size: 28px;
+    }
+
+    .questionTitle {
+        font-size: 28px;
+    }
+
+    .questionSubtitle {
+        max-width: 360px;
+        margin: 0 auto 30px;
+    }
+
+    .questionFormList {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .questionFormItem {
+        width: calc((100% - 10px) / 2);
+        margin-right: 10px;
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .questionCheckbox {
+        margin: 35px auto 0;
+    }
+}
+
+@include var.desktop-size {
+
+    .questionTitle {
+        max-width: 100%;
+    }
+
+    .questionCheckbox {
+        margin: 25px auto 0;
+    }
+}

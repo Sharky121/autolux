@@ -1,5 +1,4 @@
 import HeadSection from "@/components/head-section/head-section";
-import styles from "./about.module.css";
 import CallbackSection from "@/components/callback-section/callback-section";
 
 async function getData() {

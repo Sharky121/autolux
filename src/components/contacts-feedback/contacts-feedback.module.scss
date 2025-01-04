@@ -1,0 +1,20 @@
+@use '../../styles/abstract' as var;
+
+.contactsFeedbackSection {
+    background-image: linear-gradient(var.$brand-white 15%, var.$brand-grey-third 15% 100%);
+}
+
+.contactsFeedbackContainer {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+@include var.tablet-size {
+
+
+}
+
+@include var.desktop-size {
+
+
+}

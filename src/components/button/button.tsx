@@ -1,13 +1,13 @@
 import styles from './button.module.scss';
 
-type ButtonType = {
+interface ButtonType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     color: string,
     size?: string,
     title: string,
-    customClassName?: string
+    customClassName?: string;
 }
 
-const Button = ({title, customClassName, color, size}: ButtonType) => {
+const Button = ({title, customClassName, color, size, type="submit", onClick}: ButtonType) => {
     const colorToButton: Record<string, string> = {
         'primary': styles.buttonPrimary
     }
@@ -18,8 +18,9 @@ const Button = ({title, customClassName, color, size}: ButtonType) => {
 
     return (
         <button 
+            onClick={onClick}
             className={`${styles.button} ${customClassName ?? ''} ${colorToButton[color]} ${sizeToButton[size ?? ''] ?? ''}` } 
-            type="button">
+            type={type}>
                 {title}
         </button>
     )
