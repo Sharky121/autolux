@@ -6,7 +6,7 @@
     background-image: url('/welcome.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top -100px center;
+    background-position: top center;
 }
 
 .welcomeContainer {
@@ -19,10 +19,18 @@
 }
 
 .welcomeFeedback {
+    max-width: 480px;
+    margin: 0 auto;
     padding-top: 220px;
-    padding-bottom: 20px;
 
-    background-image: linear-gradient(transparent 0% 48%, var.$brand-black 48% 100%);
+    background-image: linear-gradient(transparent 0% 18%, var.$brand-black 48% 100%);
+}
+
+.welcomeFeedbackContainer {
+    padding-top: 15px;
+    padding-bottom: 40px;
+
+    background-color: rgba(var.$brand-white, 0.1);
 }
 
 .welcomeForm {
@@ -32,7 +40,7 @@
 .welcomeTitle {
     position: relative;
 
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 
     font-size: 20px;
     text-transform: uppercase;
@@ -44,7 +52,7 @@
 
 .welcomeSubTitle {
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 
     text-align: center;
     color: var.$brand-white;
@@ -69,7 +77,65 @@
 @include var.tablet-size {
 
     .welcome {
+        display: flex;
         height: 620px;
+    }
+
+    .welcomeFeedback {
+        margin-top: auto;
+        margin-bottom: 25px;
+
+        max-width: 920px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+
+        background-image: none;
+        background-color: rgba(var.$brand-black, 0.9);
+        border-radius: 15px;
+    }
+
+    .welcomeFeedbackContainer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        background-color: transparent;
+    }
+
+    .welcomeTitle {
+        margin-bottom: 5px;
+
+        font-size: 24px;
+        
+        br {
+            display: none;
+        }
+    }
+
+    .welcomeSubTitle {
+        width: 100%;
+
+        br {
+            display: none;
+        }
+    }
+
+    .welcomeFormList, 
+    .welcomeForm {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .welcomeFormItem {
+        margin-bottom: 0;
+    }
+
+    .welcomeFormButton {
+        margin-top: 0;
     }
 }
 
@@ -77,5 +143,16 @@
 
     .welcome {
         height: 780px;
+    }
+
+    .welcomeFeedback {
+        max-width: 1160px;
+        margin-bottom: 120px;
+    }
+
+    .welcomeTitle {
+        margin-bottom: 10px;
+
+        font-size: 28px;
     }
 }

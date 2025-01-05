@@ -15,19 +15,21 @@ const Welcome = () => {
         <section className={styles.welcome}>
             <div className={styles.welcomeFeedback}>
                 <h2 className={styles.welcomeTitle}>Автомобильные <br /> FTL грузоперевозки <br /> от 20 тонн</h2>
-                <p className={styles.welcomeSubTitle}>Введите данные, чтобы оставить заявку на грузоперевозку</p>
-                <form className={styles.welcomeForm} action="">
-                    <ul className={styles.welcomeFormList}>
-                        <li className={styles.welcomeFormItem}>
-                            <FormInput name="from" label="Откуда" />
-                        </li>
-                        <li className={styles.welcomeFormItem}>
-                            <FormInput name="to" label="Куда" />
-                        </li>
-                    </ul>
+                <div className={styles.welcomeFeedbackContainer}>
+                    <p className={styles.welcomeSubTitle}>Введите данные, чтобы оставить <br /> заявку на грузоперевозку</p>
+                    <form className={styles.welcomeForm} action="">
+                        <ul className={styles.welcomeFormList}>
+                            <li className={styles.welcomeFormItem}>
+                                <FormInput name="from" label="Откуда" />
+                            </li>
+                            <li className={styles.welcomeFormItem}>
+                                <FormInput name="to" label="Куда" />
+                            </li>
+                        </ul>
 
-                    <Button {...ButtonParams} />
-                </form>
+                        <Button {...ButtonParams} />
+                    </form>
+                </div>
             </div>
         </section>
     )
