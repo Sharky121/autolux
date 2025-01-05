@@ -1,7 +1,7 @@
 import styles from './button.module.scss';
 
 interface ButtonType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    isLoad: boolean;
+    isLoad?: boolean;
     color: string;
     size?: string;
     title: string;

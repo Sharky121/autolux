@@ -6,7 +6,7 @@ import styles from './welcome.module.scss';
 const ButtonParams = {
     color: 'primary',
     size: 'flex',
-    title: 'Отправить',
+    title: 'Продолжить',
     customClassName: styles.welcomeFormButton
 }
 

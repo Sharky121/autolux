@@ -86,7 +86,7 @@ const CalculateForm = ({subtitle, customClass}: CalculateFormType) => {
     };
 
     const ButtonParams = {
-        load: isSubmitting,
+        isLoad: isSubmitting,
         color: 'primary',
         size: 'flex',
         title: 'Отправить',

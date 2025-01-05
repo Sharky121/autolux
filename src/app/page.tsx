@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <>
-      {/* <Welcome/> */}
+      <Welcome />
       <Features title="Рефрижераторные перевозки" subtitle="Не просто транспорт, а решение для вашего бизнеса!" isDesc={false} data={features}/>
       <Partners />
       <CallbackSection />
