@@ -3,7 +3,7 @@
 .headSectionContainer {
     position: relative;
 
-    padding-top: 40px;
+    padding-top: 0;
     padding-bottom: 40px;
 
     line-height: 1.4;
@@ -181,7 +181,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 70px;
+        flex-wrap: wrap;
 
         &::after {
             left: -15px;
@@ -219,10 +219,11 @@
 
     .headSectionHeader {
         width: 40%;
+        margin-right: 70px;
     }
  
     .headSectionContent {
-        width: 60%;
+        width: calc(60% - 70px);
         margin-top: 0;
     }
 

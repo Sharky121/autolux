@@ -1,5 +1,4 @@
 import Button from "../button/button";
-import Container from "../container/container";
 import FormInput from "../form-input/form-input";
 
 import styles from './welcome.module.scss';

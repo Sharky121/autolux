@@ -1,5 +1,6 @@
 import HeadSection from "@/components/head-section/head-section";
 import CallbackSection from "@/components/callback-section/callback-section";
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 
 async function getData() {
   const response = await fetch(`${process.env.HOST}/api/page-data`);

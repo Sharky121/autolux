@@ -16,17 +16,11 @@ type CalculateFormType = {
     customClass?: string
 }
 
-const ButtonParams = {
-    color: 'primary',
-    size: 'flex',
-    title: 'Отправить',
-    customClassName: styles.calculationFormButton
-}
-
 const CalculateForm = ({subtitle, customClass}: CalculateFormType) => {
     const [successModalOpen, setSuccessModalOpen] = useState(false);
     const [errorModalOpen, setErrorModalOpen] = useState(false);
     const [isChecked, setIsChecked] = useState(true);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         formType: 'calculate',
         from: '',
@@ -43,6 +37,8 @@ const CalculateForm = ({subtitle, customClass}: CalculateFormType) => {
     const submitForm = async (evt: { preventDefault: () => void; }) => {
         evt.preventDefault();
         
+        setIsSubmitting(true);
+
         try {
             const response = await fetch('/api/callback', {
                 method: 'POST',
@@ -52,12 +48,23 @@ const CalculateForm = ({subtitle, customClass}: CalculateFormType) => {
 
             if (response.ok) {
                 setSuccessModalOpen(true);
+                setFormData({
+                    formType: 'calculate',
+                    from: '',
+                    to: '',
+                    name: '',
+                    phone: '',
+                    inn: ''
+                });
             } else {
                 setErrorModalOpen(true);
             }
         } catch (error) {
             setErrorModalOpen(true);
+            console.log(error);
         }
+
+        setIsSubmitting(false);
     }
 
     const checkInputHandler = () => {
@@ -76,7 +83,15 @@ const CalculateForm = ({subtitle, customClass}: CalculateFormType) => {
         isChecked: isChecked,
         title: "Cогласен на обработку персональных данных",
         customClass: styles.calculationCheckbox
-    }
+    };
+
+    const ButtonParams = {
+        load: isSubmitting,
+        color: 'primary',
+        size: 'flex',
+        title: 'Отправить',
+        customClassName: styles.calculationFormButton
+    };
 
     const successModalParams = {
         type: "status",

@@ -4,6 +4,7 @@ import { MenuType } from '@/data/menu';
 import styles from './head-section.module.scss';
 import Container from '../container/container';
 import Image from 'next/image';
+import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 
 type PageType = MenuType['url'];
 
@@ -19,7 +20,9 @@ type HeadSectionType = {
 
 const HeadSection = ({data, type}: HeadSectionType) => {
 
-    const typeToClass = {
+    const typeToClass: {
+        [key: string]: string
+    } = {
         'transportation': styles.headSectionContainerTransportation,
         'about': styles.headSectionContainerAbout,
         'drivers': styles.headSectionContainerDrivers,
@@ -30,6 +33,7 @@ const HeadSection = ({data, type}: HeadSectionType) => {
     return (
         <section className={styles.headSection}>
             <Container customClassName={`${styles.headSectionContainer} ${typeToClass[type]}`}>
+                <Breadcrumbs title={data.title} />
                 <div className={styles.headSectionHeader}>
                     <h1 className={styles.headSectionTitle}>{data.title}</h1>
                     <p className={styles.headSectionSubtitle}>{data.subtitle}</p>
