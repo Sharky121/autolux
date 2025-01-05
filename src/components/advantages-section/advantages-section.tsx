@@ -14,7 +14,9 @@ type AdvantagesSectionType = {
 
 const AdvantagesSection = ({data, title, type}: AdvantagesSectionType) => {
     
-    const itemToCssClass = {
+    const itemToCssClass: {
+        [key: string]: string
+    } = {
         'drivers': styles.advantagesListDriver,
         'partners': styles.advantagesListPartners
     }
