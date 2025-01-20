@@ -1,7 +1,5 @@
 'use client'
 
-import { useMask } from '@react-input/mask';
-
 import { useId } from 'react';
 import styles from './form-input.module.scss';
 
@@ -16,7 +14,7 @@ type FormInputType = {
     onChange: (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const FormInput = ({mask, theme, name, label, type="text", onChange, isRequired = true, value }: FormInputType) => {
+const FormInput = ({theme, name, label, type="text", onChange, isRequired = true, value }: FormInputType) => {
     const id= useId();
 
     const themeStyle = `${theme ? styles[`theme${theme.charAt(0).toUpperCase() + theme.slice(1)}`] : ''}`;
