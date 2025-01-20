@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SideMenu from '../side-menu/side-menu';
 
 import styles from './hamburger-menu.module.scss';
