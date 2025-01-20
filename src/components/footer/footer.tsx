@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <Container customClassName={styles.footerContainer}>
                 <Link className={styles.footerLogo} href={"/"}>
-                    <Image src="/logo-white.png" width="200" height="109" alt="Логотип автолюкс"/>
+                    <Image src="/logo-white.png" width="200" height="109" alt="Логотип автолюкс" unoptimized/>
                 </Link>
 
                 <div className={styles.footerNav}>

@@ -1,7 +1,14 @@
 @use '../../styles/abstract' as var;
 
 .header {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    position: sticky;
+    left: 0;
+    top: 0;
+
+    background-color: var.$brand-white;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+
+    z-index: 3;
 }
 
 .headerContainer {
@@ -24,11 +31,28 @@
 
 @include var.tablet-size {
 
+    .headerPrimary {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .headerSecondary {
+        background-color: var.$brand-white;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    }
+
     .headerContainer {
         justify-content: flex-start;
         gap: 30px;
         padding-top: 30px;
         padding-bottom: 30px;
+
+        transition: padding 0.3s ease;
+    }
+
+    .headerSecondary .headerContainer {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     .headerLogo img {

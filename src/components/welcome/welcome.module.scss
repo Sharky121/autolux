@@ -1,12 +1,39 @@
 @use '../../styles/abstract' as var;
 
 .welcome {
+    position: relative;
+
     width: 100%;
+    margin-top: -111px;
     
     background-image: url('/welcome.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center -150px;
+
+    z-index: 2;
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 60px,
+            rgba(255, 255, 255, 0) 70%,
+            rgba(0, 0, 0, 1) 100%
+        );
+
+        z-index: 2;
+    }
 }
 
 .welcomeContainer {
@@ -19,11 +46,13 @@
 }
 
 .welcomeFeedback {
-    max-width: 480px;
+    position: relative;
+
     margin: 0 auto;
-    padding-top: 220px;
+    padding-top: 400px;
 
     background-image: linear-gradient(transparent 0% 18%, var.$brand-black 48% 100%);
+    z-index: 3;
 }
 
 .welcomeFeedbackContainer {
@@ -34,6 +63,8 @@
 }
 
 .welcomeForm {
+    max-width: var.$mobile-width;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
@@ -188,6 +219,16 @@
     .welcome {
         display: flex;
         height: 620px;
+
+        &::before {
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.6) 13%,
+                rgba(255, 255, 255, 0) 70%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
     }
 
     .welcomeFeedback {
@@ -196,11 +237,13 @@
 
         max-width: 920px;
         padding-top: 30px;
-        padding-bottom: 15px;
+        padding-bottom: 25px;
 
         background-image: none;
-        background-color: rgba(var.$brand-black, 0.9);
         border-radius: 15px;
+
+        backdrop-filter: blur(5px);
+        background-color: rgba(var.$brand-white, 0.2);
     }
 
     .welcomeFeedbackContainer {
@@ -240,6 +283,7 @@
     }
 
     .welcomeForm {
+        max-width: 100%;
         width: 100%;
     }
 
@@ -317,16 +361,34 @@
 
     .welcome {
         height: 780px;
+
+        &::before {
+
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 255, 255, 0) 60%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
     }
 
     .welcomeFeedback {
         max-width: 1160px;
-        margin-bottom: 120px;
+        margin-bottom: 60px;
     }
 
     .welcomeTitle {
         margin-bottom: 10px;
 
         font-size: 28px;
+    }
+}
+
+@include var.max-desktop-size {
+
+    .welcome {
+        background-position: 50% -390px;
     }
 }

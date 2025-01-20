@@ -24,6 +24,19 @@
   }
 }
 
+@mixin large-desktop-size {
+  @media (min-width: #{variables.$large-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin max-desktop-size {
+  @media (min-width: #{variables.$max-desktop-width}) {
+    @content;
+  }
+}
+
+
 @mixin retina {
   @media (min-resolution: #{variables.$retina-dpi}), (min-resolution: #{variables.$retina-dpi}) {
     @content;

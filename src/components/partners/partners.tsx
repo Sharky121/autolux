@@ -27,7 +27,7 @@ const Partners = () => {
                     {
                         slides.map((slide: string, index: number) => (
                             <SwiperSlide className={`slider ${styles.partnersCarouselSlide}`}  key={index} >
-                                <Image className={styles.partnersImage} src={`/${slide}`} width={112} height={70} alt="Партнер"/>
+                                <Image className={styles.partnersImage} src={`/${slide}`} width={112} height={70} alt="Партнер" unoptimized/>
                             </SwiperSlide>
                         ))
                     }

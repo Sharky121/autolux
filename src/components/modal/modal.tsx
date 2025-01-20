@@ -29,7 +29,7 @@ const Modal = ({children, onClose, title, type, isCloseButton = true}: ModalType
     return (
         <Portal>
             <>
-                <div className={styles.modalBackdrop}></div>
+                <div className={styles.modalBackdrop} onClick={onClose}></div>
                 <div className={`${styles.modal} ${type ? typeToClass[type] :  ''}`}>
                     <div className={styles.modalWrapper}>
                         <button className={styles.modalClose} onClick={onClose}>

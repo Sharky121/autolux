@@ -1,0 +1,19 @@
+@use '../../styles/abstract' as var;
+
+.mapContainer {
+    height: 180px;
+}
+
+@include var.tablet-size {
+
+    .mapContainer {
+        height: 420px;
+    }
+}
+
+@include var.desktop-size {
+
+    .mapContainer {
+        height: 630px;
+    }
+}

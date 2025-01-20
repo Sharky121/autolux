@@ -4,8 +4,6 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
     const formData = await request.json();
     
-    console.log(formData.formType);
-
     const mailTo = typeToMail[formData.formType].mailTo.join();
     const mailTitle = typeToMail[formData.formType].title;
 

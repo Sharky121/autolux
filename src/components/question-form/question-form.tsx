@@ -6,15 +6,13 @@ import Checkbox from '../checkbox/checkbox';
 import FormInput from '../form-input/form-input';
 
 import styles from './question-form.module.scss';
-
-const ButtonParams = {
-    color: 'primary',
-    size: 'flex',
-    title: 'Отправить',
-    customClassName: styles.questionFormButton
-}
+import Modal from '../modal/modal';
+import ModalStatus from '../modal/modal-status';
 
 const QuestionForm = () => {
+    const [successModalOpen, setSuccessModalOpen] = useState(false);
+    const [errorModalOpen, setErrorModalOpen] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [isChecked, setIsChecked] = useState(true);
     const [formData, setFormData] = useState({
         formType: 'question',
@@ -24,6 +22,8 @@ const QuestionForm = () => {
 
     const submitForm = async (evt: { preventDefault: () => void; }) => {
         evt.preventDefault();
+
+        setIsSubmitting(true);
         
         try {
             const response = await fetch('/api/callback', {
@@ -33,13 +33,23 @@ const QuestionForm = () => {
             });
 
             if (response.ok) {
+                setFormData({
+                    formType: 'question',
+                    name: '',
+                    phone: ''
+                });
+                setSuccessModalOpen(true);
                 console.log(response);
             } else {
+                setErrorModalOpen(true);
                 console.log('Ошибка в try');
             }
         } catch (error) {
+            setErrorModalOpen(true);
             console.log(`Ошибка catch: ${error}`);
         }
+
+        setIsSubmitting(false);
     }
 
     const checkInputHandler = () => {
@@ -60,25 +70,67 @@ const QuestionForm = () => {
         customClass: styles.questionCheckbox
     }
 
-    return (
-        <div className={styles.question}>
-            <h3 className={styles.questionTitle}>Остались вопросы?</h3>
-            <p className={styles.questionSubtitle}>Введите данные, и нажимте отправить, наш менеджер свяжется в кратчашее время</p>
-            <form className={styles.questionForm} onSubmit={submitForm}>
-                <input type="hidden" name="type" value={formData.formType} />
+    const handleCloseSuccessModal = () => setSuccessModalOpen(false);
 
-                <ul className={styles.questionFormList}>
-                    <li className={styles.questionFormItem}>
-                        <FormInput name="name" label="ФИО" onChange={handleInputChange} />
-                    </li>
-                    <li className={styles.questionFormItem}>
-                        <FormInput name="phone" label="Телефон" onChange={handleInputChange} />
-                    </li>
-                </ul>
-                <Checkbox {...CheckboxParams}/>
-                <Button {...ButtonParams} />
-            </form>
-        </div>
+    const handleCloseErrorModal = () => setErrorModalOpen(false);
+
+    const ButtonParams = {
+        isLoad: isSubmitting,
+        color: 'primary',
+        size: 'flex',
+        title: 'Отправить',
+        customClassName: styles.questionFormButton
+    }
+
+    const successModalParams = {
+        type: "status",
+        title: "Успешно!",
+        onClose: handleCloseSuccessModal,
+    };
+
+    const errorModalParams = {
+        type: "status",
+        title: "Ошибка!",
+        onClose: handleCloseErrorModal,
+    };
+
+    return (
+        <>
+            <div className={styles.question}>
+                <h3 className={styles.questionTitle}>Остались вопросы?</h3>
+                <p className={styles.questionSubtitle}>Введите данные, и нажимте отправить, наш менеджер свяжется в кратчашее время</p>
+                <form className={styles.questionForm} onSubmit={submitForm}>
+                    <input type="hidden" name="type" value={formData.formType} />
+
+                    <ul className={styles.questionFormList}>
+                        <li className={styles.questionFormItem}>
+                            <FormInput name="name" label="ФИО" onChange={handleInputChange} value={formData.name}/>
+                        </li>
+                        <li className={styles.questionFormItem}>
+                            <FormInput name="phone" label="Телефон" type="number" onChange={handleInputChange} value={formData.phone}/>
+                        </li>
+                    </ul>
+                    <Checkbox {...CheckboxParams}/>
+                    <Button {...ButtonParams} />
+                </form>
+            </div>
+
+            { 
+                successModalOpen && (
+                    <Modal {...successModalParams}>
+                        <ModalStatus text = "Ваша заявка отправлена. <br /> В ближайшее время с вами свяжется наш менеджер."/>
+                    </Modal>
+                )
+            }
+
+            { 
+                errorModalOpen && (
+                    <Modal {...errorModalParams}>
+                        <ModalStatus text = "Что-то пошло не так. <br /> Попробойте через некоторое время или свяжитесь по телефону."/>
+                    </Modal>
+                )
+            }
+        </>
     )
 }
 

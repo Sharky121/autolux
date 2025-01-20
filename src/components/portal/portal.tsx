@@ -12,11 +12,18 @@ const Portal = ({children}: IPortal) => {
 
   useEffect(() => {
     document.body.appendChild(container);
+    // document.body.style.overflowY = "hidden";
+
+
+  const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+
+  console.log(scrollY);
 
     return () => {
       document.body.removeChild(container);
+      // document.body.style.overflowY = "auto";
     }
-  }, []);
+  }, [container]);
 
   return createPortal(children, container);
 }

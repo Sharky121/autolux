@@ -136,6 +136,11 @@
     .calculation {
         max-width: 920px;
         padding: 90px;
+
+        background-image: url('/dots.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     .calculationTitle {

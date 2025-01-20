@@ -120,22 +120,22 @@ const CalculateForm = ({subtitle, customClass}: CalculateFormType) => {
 
                     <ul className={styles.calculationFormList}>
                         <li className={styles.calculationFormItem}>
-                            <FormInput name="from" label="Откуда" onChange={handleInputChange} />
+                            <FormInput name="from" label="Откуда" onChange={handleInputChange} value={formData.from} />
                         </li>
                         <li className={styles.calculationFormItem}>
                             <Image src="ico-truck.svg" width={66} height={20} alt="Грузовик" />
                         </li>
                         <li className={styles.calculationFormItem}>
-                            <FormInput name="to" label="Куда" onChange={handleInputChange} />
+                            <FormInput name="to" label="Куда" onChange={handleInputChange} value={formData.to} />
                         </li>
                         <li className={styles.calculationFormItem}>
-                            <FormInput name="name" label="ФИО" onChange={handleInputChange} />
+                            <FormInput name="name" label="ФИО" onChange={handleInputChange} value={formData.name} />
                         </li>
                         <li className={styles.calculationFormItem}>
-                            <FormInput name="phone" label="Телефон" onChange={handleInputChange} />
+                            <FormInput name="phone" label="Телефон" type="number" onChange={handleInputChange} value={formData.phone}/>
                         </li>
                         <li className={styles.calculationFormItem}>
-                            <FormInput name="inn" label="ИНН" onChange={handleInputChange} />
+                            <FormInput name="inn" label="ИНН" type="number" onChange={handleInputChange} value={formData.inn}/>
                         </li>
                     </ul>
                     <Checkbox {...CheckboxParams}/>

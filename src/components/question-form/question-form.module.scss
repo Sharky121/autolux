@@ -66,6 +66,11 @@
     .question {
         max-width: 780px;
         padding: 70px 90px 60px;
+
+        background-image: url('/dots.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     .questionTitle {

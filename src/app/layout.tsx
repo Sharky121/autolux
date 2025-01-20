@@ -24,6 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ru" className={montserrat.className}>
       <body>
@@ -32,7 +33,7 @@ export default function RootLayout({
         <main className={styles.main}>
           {children}
         </main>
-        
+
         <Footer />
 
         {/* SVG-ICONS */}

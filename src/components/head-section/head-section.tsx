@@ -45,7 +45,7 @@ const HeadSection = ({data, type}: HeadSectionType) => {
                         width={340}
                         height={170}
                         quality={100}
-                        alt="О компании"
+                        alt="О компании" unoptimized
                     />
                     
                     <div className={styles.headSectionDesc} dangerouslySetInnerHTML={{__html: data.description}} />

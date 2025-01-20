@@ -1,9 +1,14 @@
 'use client'
 
+import { useMask } from '@react-input/mask';
+
 import { useId } from 'react';
 import styles from './form-input.module.scss';
 
 type FormInputType = {
+    value?: string;
+    isRequired?: boolean;
+    mask?: string;
     theme?: string;
     name: string;
     label: string;
@@ -11,19 +16,22 @@ type FormInputType = {
     onChange: (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const FormInput = ({theme, name, label, type="text", onChange}: FormInputType) => {
+const FormInput = ({mask, theme, name, label, type="text", onChange, isRequired = true, value }: FormInputType) => {
     const id= useId();
+
+    const themeStyle = `${theme ? styles[`theme${theme.charAt(0).toUpperCase() + theme.slice(1)}`] : ''}`;
 
     return (
         <>
             <label className="visually-hidden" htmlFor={name}>{label}</label>
-            <input className={`${styles.input} ${theme ? styles[`theme${theme.charAt(0).toUpperCase() + theme.slice(1)}`] : ''}`} 
+            <input className={`${styles.input} ${themeStyle}`} 
                    id={id} 
                    name={name} 
                    type={type} 
                    placeholder={label} 
-                   defaultValue="" 
-                   onChange={onChange}/>
+                   value={value} 
+                   onChange={onChange}
+                   required={isRequired} />
         </>
     )
 }
