@@ -12,13 +12,13 @@ async function getData() {
 }
 
 export default async function Page() {
-  const pages= await getData();
+  // const pages= await getData();
 
-  const page = pages.find((item: { slug: string; }) => item.slug === 'about');
+  // const page = pages.find((item: { slug: string; }) => item.slug === 'about');
 
   return (
     <>
-        <HeadSection type="about" data={page}/>
+        {/* <HeadSection type="about" data={page}/> */}
         <CallbackSection />
     </>
   );
