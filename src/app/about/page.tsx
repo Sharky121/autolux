@@ -1,15 +1,15 @@
-import HeadSection from "@/components/head-section/head-section";
+// import HeadSection from "@/components/head-section/head-section";
 import CallbackSection from "@/components/callback-section/callback-section";
 
-async function getData() {
-  const response = await fetch(`${process.env.HOST}/api/page-data`);
+// async function getData() {
+//   const response = await fetch(`${process.env.HOST}/api/page-data`);
 
-  if (!response.ok) {
-      throw new Error('Failed to fetch data')
-  }
+//   if (!response.ok) {
+//       throw new Error('Failed to fetch data')
+//   }
 
-  return response.json();
-}
+//   return response.json();
+// }
 
 export default async function Page() {
   // const pages= await getData();
