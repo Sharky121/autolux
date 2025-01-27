@@ -8,19 +8,19 @@ type typeToMailType = {
 export const typeToMail: typeToMailType = {
     'calculate': {
         title: 'Заявка на расчёт стоимости',
-        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro']
+        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro', 's.besedin@autoluxmsk.ru']
     },
     'partners': {
         title: 'Стать партнёром',
-        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro']
+        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro', 's.besedin@autoluxmsk.ru']
     },
     'question': {
         title: 'Вопрос с сайта',
-        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro']
+        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro', 's.besedin@autoluxmsk.ru']
     },
     'drivers': {
         title: 'Хочу стать водителем',
-        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro']
+        mailTo: ['loginov@cherryline.ru', 'mail@netcats.pro', 's.besedin@autoluxmsk.ru']
     }
 }
 
