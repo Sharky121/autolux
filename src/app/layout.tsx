@@ -15,8 +15,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Сайт компании Автолюкс",
-  description: "Автолюкс - грузовые перевозки",
+  title: "Транспортная компания автолюкс",
+  description: "Транспортная компания автолюкс",
+  icons: {
+    icon: '/favicon.ico'
+  },
 };
 
 export default function RootLayout({
